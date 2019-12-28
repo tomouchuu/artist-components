@@ -1,0 +1,60 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
+
+import SoundcloudPlayer from './index.jsx';
+
+<Meta title="Soundcloud/Embeds" component={SoundcloudPlayer} decorators={[withKnobs]} />
+
+<Story name="Track" parameters={{docs: {disable: true}}}>
+    <SoundcloudPlayer
+        artwork={boolean('Artwork', true)}
+        autoplay={boolean('Autoplay', false)}
+        buying={boolean('Buying', true)}
+        color={text('Color', 'ff5500')}
+        comments={boolean('Comments', true)}
+        download={boolean('Download', true)}
+        itemId={number('ID', 578967504)}
+        liking={boolean('Liking', true)}
+        playcount={boolean('Playcount', true)}
+        related={boolean('Related', true)}
+        sharing={boolean('Sharing', true)}
+        size={select('Size', {'small': 'sm', 'medium': 'md', 'large': 'lg'}, 'sm')}
+        type={select('Type', {'track': 'track', 'user': 'user'}, 'track')}
+        user={boolean('Should show user', true)}
+        visual={boolean('Visual mode', true)}
+    />
+</Story>
+
+<Story name="User" parameters={{docs: {disable: true}}}>
+    <SoundcloudPlayer
+        artwork={boolean('Artwork', true)}
+        autoplay={boolean('Autoplay', false)}
+        buying={boolean('Buying', true)}
+        color={text('Color', 'ff5500')}
+        comments={boolean('Comments', true)}
+        download={boolean('Download', true)}
+        itemId={number('ID', 452673012)}
+        liking={boolean('Liking', true)}
+        playcount={boolean('Playcount', true)}
+        related={boolean('Related', true)}
+        sharing={boolean('Sharing', true)}
+        size={select('Size', {'small': 'sm', 'medium': 'md', 'large': 'lg'}, 'sm')}
+        type={select('Type', {'track': 'track', 'user': 'user'}, 'user')}
+        user={boolean('Should show user', true)}
+        visual={boolean('Visual mode', true)}
+    />
+</Story>
+
+# Soundcloud Player
+
+A customisable soundcloud embed component. At minimum pass through the `itemId` and type of user or track `type` to get an embedded soundcloud component. Variety of other props supported, check the props table below and also head to the canvas to play with them.
+
+<Preview>
+    <SoundcloudPlayer itemId={578967504} type="track" />
+</Preview>
+
+<Preview>
+    <SoundcloudPlayer itemId={452673012} type="user" />
+</Preview>
+
+<Props of={SoundcloudPlayer} />

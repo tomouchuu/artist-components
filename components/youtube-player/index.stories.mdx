@@ -1,0 +1,64 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
+
+import YoutubePlayer from './index.jsx';
+
+<Meta title="Youtube/Embeds" component={YoutubePlayer} decorators={[withKnobs]} />
+
+<Story name="Playlist" parameters={{docs: {disable: true}}}>
+    <YoutubePlayer
+        autoplay={boolean('Autoplay', false)}
+        branding={boolean('Branding', false)}
+        color={select('Color', {'red': 'red', 'white': 'white'}, 'red')}
+        controls={boolean('Controls', true)}
+        height={number('Height', 315)}
+        inline={boolean('Play Inline', false)}
+        itemId={text('ItemID', 'VsS70XB6k2Rz2vZxsLciuIbGLo5vVVJ-')}
+        loop={boolean('Loops', false)}
+        privacy={boolean('Privacy mode', false)}
+        type={select('Type', {'Playlist': 'playlist', 'Search': 'search', 'Video': 'video'}, 'playlist')}
+        width={number('Width', 560)}
+    />
+</Story>
+
+<Story name="Search" parameters={{docs: {disable: true}}}>
+    <YoutubePlayer
+        autoplay={boolean('Autoplay', false)}
+        branding={boolean('Branding', false)}
+        color={select('Color', {'red': 'red', 'white': 'white'}, 'red')}
+        controls={boolean('Controls', true)}
+        height={number('Height', 315)}
+        inline={boolean('Play Inline', false)}
+        itemId={text('ItemID', 'パピプペポは難しいofficial')}
+        loop={boolean('Loops', false)}
+        privacy={boolean('Privacy mode', false)}
+        type={select('Type', {'Playlist': 'playlist', 'Search': 'search', 'Video': 'video'}, 'search')}
+        width={number('Width', 560)}
+    />
+</Story>
+
+<Story name="Video" parameters={{docs: {disable: true}}}>
+    <YoutubePlayer
+        autoplay={boolean('Autoplay', false)}
+        branding={boolean('Branding', false)}
+        color={select('Color', {'red': 'red', 'white': 'white'}, 'red')}
+        controls={boolean('Controls', true)}
+        height={number('Height', 315)}
+        inline={boolean('Play Inline', false)}
+        itemId={text('ItemID', 'f6hbUZxnkTU')}
+        loop={boolean('Loops', false)}
+        privacy={boolean('Privacy mode', false)}
+        type={select('Type', {'Playlist': 'playlist', 'Search': 'search', 'Video': 'video'}, 'video')}
+        width={number('Width', 560)}
+    />
+</Story>
+
+# Youtube Player
+
+A customisable youtube embed component. At minimum pass through the `itemId` and type of media `type` to get an embedded youtube component. Variety of other props supported, check the props table below and also head to the canvas to play with them.
+
+<Preview>
+    <YoutubePlayer itemId="f6hbUZxnkTU" type="video" />
+</Preview>
+
+<Props of={YoutubePlayer} />

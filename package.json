@@ -1,0 +1,28 @@
+{
+  "name": "artist-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@storybook/addon-a11y": "^5.3.0-rc.4",
+    "@storybook/addon-docs": "^5.3.0-rc.4",
+    "@storybook/addon-knobs": "^5.3.0-rc.4",
+    "@storybook/addon-viewport": "^5.3.0-rc.4",
+    "@storybook/addons": "^5.3.0-rc.4",
+    "@storybook/react": "^5.3.0-rc.4",
+    "babel-loader": "^8.0.6",
+    "prop-types": "^15.7.2"
+  }
+}
